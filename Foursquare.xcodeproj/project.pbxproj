@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C904E4E52ECF39BD00165C95 /* ParseLiveQuery in Frameworks */ = {isa = PBXBuildFile; productRef = C904E4E42ECF39BD00165C95 /* ParseLiveQuery */; };
+		C904E4E72ECF39BD00165C95 /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = C904E4E62ECF39BD00165C95 /* ParseObjC */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C904E4C82ECF385700165C95 /* Foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C904E4E72ECF39BD00165C95 /* ParseObjC in Frameworks */,
+				C904E4E52ECF39BD00165C95 /* ParseLiveQuery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = Foursquare;
 			packageProductDependencies = (
+				C904E4E42ECF39BD00165C95 /* ParseLiveQuery */,
+				C904E4E62ECF39BD00165C95 /* ParseObjC */,
 			);
 			productName = Foursquare;
 			productReference = C904E4C82ECF385700165C95 /* Foursquare.app */;
@@ -107,6 +116,9 @@
 			);
 			mainGroup = C904E4BF2ECF385700165C95;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C904E4E32ECF39BD00165C95 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C904E4C92ECF385700165C95 /* Products */;
 			projectDirPath = "";
@@ -335,6 +347,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C904E4E32ECF39BD00165C95 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-SDK-iOS-OSX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C904E4E42ECF39BD00165C95 /* ParseLiveQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C904E4E32ECF39BD00165C95 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseLiveQuery;
+		};
+		C904E4E62ECF39BD00165C95 /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C904E4E32ECF39BD00165C95 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseObjC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C904E4C02ECF385700165C95 /* Project object */;
 }
