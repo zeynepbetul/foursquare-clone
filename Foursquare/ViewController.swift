@@ -20,6 +20,18 @@ class ViewController: UIViewController {
 
 
     @IBAction func signIn(_ sender: Any) {
+        if username.text != "" && password.text != "" {
+            PFUser.logInWithUsername(inBackground: self.username.text!, password: self.password.text!) { [self] (user: PFUser?, error: Error?) -> Void in
+                if user != nil {
+                    self.makeAlert(title: "Login Successful", message: "")
+                } else {
+                    makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
+                }
+            }
+            
+        } else {
+            makeAlert(title: "Error", message: "Username or Password cannot be empty")
+        }
     }
     
     @IBAction func signUp(_ sender: Any) {
