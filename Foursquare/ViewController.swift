@@ -24,6 +24,7 @@ class ViewController: UIViewController {
             PFUser.logInWithUsername(inBackground: self.username.text!, password: self.password.text!) { [self] (user: PFUser?, error: Error?) -> Void in
                 if user != nil {
                     self.makeAlert(title: "Login Successful", message: "")
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 } else {
                     makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                 }
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
                 if error != nil {
                     self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                 } else {
-                    // performsegue
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
         } else {
