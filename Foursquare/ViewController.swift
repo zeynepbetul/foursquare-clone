@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         if username.text != "" && password.text != "" {
             PFUser.logInWithUsername(inBackground: self.username.text!, password: self.password.text!) { [self] (user: PFUser?, error: Error?) -> Void in
                 if user != nil {
-                    self.makeAlert(title: "Login Successful", message: "")
                     self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 } else {
                     makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
