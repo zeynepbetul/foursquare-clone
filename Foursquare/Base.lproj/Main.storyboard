@@ -180,6 +180,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K21-3T-AGE"/>
+                    <connections>
+                        <outlet property="atmosphere" destination="qgP-UU-gz9" id="0aV-3K-aGf"/>
+                        <outlet property="image" destination="ZoJ-fB-YA4" id="20g-Sn-Y9d"/>
+                        <outlet property="map" destination="cTi-wU-2FZ" id="ZrW-dP-2bs"/>
+                        <outlet property="placeName" destination="6XR-a6-toI" id="H27-0z-hQS"/>
+                        <outlet property="placeType" destination="dQV-3L-IQT" id="Bhk-tT-Wya"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSW-KC-ZVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
