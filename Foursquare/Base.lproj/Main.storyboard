@@ -145,6 +145,9 @@
                                 <rect key="frame" x="166" y="667" width="60" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="YSw-qv-gWn" eventType="touchUpInside" id="xAT-wA-ctk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jPr-AG-tuo"/>
@@ -169,6 +172,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gd0-Cl-Tv3"/>
+                    <connections>
+                        <outlet property="atmosphere" destination="nNy-lY-PMD" id="pA1-xa-hmE"/>
+                        <outlet property="placeName" destination="6kb-pr-zyc" id="Wr2-GV-bJL"/>
+                        <outlet property="placeType" destination="1lB-VY-F3b" id="ol9-hq-FTQ"/>
+                        <outlet property="selectImage" destination="Hjc-5n-wb7" id="gZf-E5-niZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djG-TV-aP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
