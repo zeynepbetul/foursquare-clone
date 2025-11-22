@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7l-Yb-Ytv">
-                                <rect key="frame" x="38" y="149" width="313" height="34"/>
+                                <rect key="frame" x="38" y="90" width="313" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-GY-iPj">
-                                <rect key="frame" x="40" y="212" width="313" height="34"/>
+                                <rect key="frame" x="40" y="153" width="313" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5H-CR-qhi">
-                                <rect key="frame" x="38" y="279" width="76" height="35"/>
+                                <rect key="frame" x="38" y="220" width="76" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
                                 <connections>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLP-JN-6JW">
-                                <rect key="frame" x="269" y="279" width="84" height="35"/>
+                                <rect key="frame" x="269" y="220" width="84" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
@@ -67,6 +67,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X7l-Yb-Ytv" secondAttribute="trailing" constant="42" id="qNz-qK-TEZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1l4-0p-8hP"/>
                     <connections>
                         <outlet property="password" destination="6Bi-GY-iPj" id="l8p-TZ-cro"/>
                         <outlet property="username" destination="X7l-Yb-Ytv" id="iXE-0F-6fg"/>
@@ -102,6 +103,7 @@
                     <navigationItem key="navigationItem" id="g1a-yg-pfr"/>
                     <connections>
                         <outlet property="table" destination="0ot-I3-57s" id="jzq-Fs-xPE"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="AYC-TD-lAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IM-af-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
