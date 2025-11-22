@@ -104,7 +104,7 @@
                     <connections>
                         <outlet property="table" destination="0ot-I3-57s" id="jzq-Fs-xPE"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="AYC-TD-lAa"/>
-                        <segue destination="YSw-qv-gWn" kind="show" identifier="toAddVC" id="Lez-Cc-Dfg"/>
+                        <segue destination="YSw-qv-gWn" kind="presentation" identifier="toAddVC" modalPresentationStyle="fullScreen" id="Lez-Cc-Dfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IM-af-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
