@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="2101.5267175572517" y="26.760563380281692"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="EdN-rx-7hp">
             <objects>
-                <viewController id="34U-Be-ULk" sceneMemberID="viewController">
+                <viewController id="34U-Be-ULk" customClass="MapViewController" customModule="Foursquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQW-gr-csQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
