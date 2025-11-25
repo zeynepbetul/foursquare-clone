@@ -24,7 +24,22 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "toMapView", sender: nil)
+        if placeName.text != "" && placeType.text != nil && atmosphere.text != nil {
+            if let chosenImage = selectImage.image {
+                let placeModel = PlaceModel.sharedInstance
+                placeModel.placeName = placeName.text!
+                placeModel.placeType = placeType.text!
+                placeModel.atmosphere = atmosphere.text!
+                placeModel.image = chosenImage
+                self.performSegue(withIdentifier: "toMapView", sender: nil)
+            }
+        } else {
+                let alert = UIAlertController(title: "Error", message: "Fields cannot be empty", preferredStyle: UIAlertController.Style.alert)
+                let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(okButton)
+                present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     @objc func pickImg() {
