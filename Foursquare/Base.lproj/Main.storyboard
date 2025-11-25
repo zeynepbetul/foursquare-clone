@@ -116,7 +116,7 @@
         <!--Details View Controller-->
         <scene sceneID="l9D-fd-CZQ">
             <objects>
-                <viewController id="ZCo-kc-Cfq" customClass="DetailsViewController" customModule="Foursquare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toDetails" id="ZCo-kc-Cfq" customClass="DetailsViewController" customModule="Foursquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ECM-79-7oS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +282,7 @@
             <objects>
                 <viewController id="34U-Be-ULk" customClass="MapViewController" customModule="Foursquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQW-gr-csQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3c5-QA-kBf">
@@ -330,6 +330,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Lez-Cc-Dfg"/>
         <segue reference="OtE-v2-SY2"/>
     </inferredMetricsTieBreakers>
     <resources>

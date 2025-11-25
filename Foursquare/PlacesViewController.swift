@@ -13,6 +13,8 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var table: UITableView!
     var placeNames = [String]()
     var placeIds = [String]()
+    var chosenTitle: String?
+    var chosenId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,18 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell()
         cell.textLabel?.text = placeNames[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenTitle = placeNames[indexPath.row]
+        chosenId = placeIds[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DetailsViewController
+        destinationVC.selectedTitle = chosenTitle
+        destinationVC.selectedId = chosenId
     }
     
     @objc func logoutClicked() {

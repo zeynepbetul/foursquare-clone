@@ -17,10 +17,13 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var placeType: UILabel!
     @IBOutlet weak var map: MKMapView!
     
+    var selectedTitle: String?
+    var selectedId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 }
