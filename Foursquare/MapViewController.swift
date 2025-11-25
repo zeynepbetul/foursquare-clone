@@ -25,7 +25,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveClicked))
-
+        
+        let pinGestureRecognizer =  UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(gestureRecognizer:)))
+        pinGestureRecognizer.minimumPressDuration = 3
+        map.addGestureRecognizer(pinGestureRecognizer)
+    }
+    
+    @objc func chooseLocation(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            let touchedPoint = gestureRecognizer.location(in: self.map)
+            let touchedCoordinates = self.map.convert(touchedPoint, toCoordinateFrom: self.map)
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = touchedCoordinates
+            annotation.title = PlaceModel.sharedInstance.placeName
+            annotation.subtitle = PlaceModel.sharedInstance.placeType
+            self.map.addAnnotation(annotation)
+        }
     }
     
     @objc func saveClicked() {
