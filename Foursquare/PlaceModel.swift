@@ -15,6 +15,8 @@ class PlaceModel {
     var placeType: String?
     var atmosphere: String?
     var image: UIImage?
+    var latitude: String?
+    var longitude: String?
     
     private init() {
         

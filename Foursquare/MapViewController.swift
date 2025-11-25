@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import ParseCore
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -45,11 +46,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @objc func saveClicked() {
+        let placeModel = PlaceModel.sharedInstance
+        let places = PFObject(className: "Places")
+        places["name"] = placeModel.placeName
+        places["type"] = placeModel.placeType
+        places["atmosphere"] = placeModel.atmosphere
+        places["latitude"] = placeModel.latitude
+        places["longitude"] = placeModel.longitude
         
+        if let imageData = placeModel.image?.jpegData(compressionQuality: 0.5) {
+            places["image"] = PFFileObject(name: "image.jpg", data: imageData)
+        }
+        places.saveInBackground { success, error in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.performSegue(withIdentifier: "fromMapVCtoPlacesVC", sender: nil)
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
+        PlaceModel.sharedInstance.latitude = String(locations[0].coordinate.latitude)
+        PlaceModel.sharedInstance.longitude = String(locations[0].coordinate.longitude)
         let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.035, longitudeDelta: 0.035)
         let region = MKCoordinateRegion(center: location, span: span)
