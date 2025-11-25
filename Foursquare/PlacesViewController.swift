@@ -8,14 +8,27 @@
 import UIKit
 import ParseCore
 
-class PlacesViewController: UIViewController {
+class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        table.delegate = self
+        table.dataSource = self
 
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutClicked))
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        var content = cell.defaultContentConfiguration()
+        return cell
     }
     
     @objc func logoutClicked() {
