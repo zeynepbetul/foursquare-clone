@@ -21,6 +21,13 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate 
         selectImage.isUserInteractionEnabled = true
         selectImage.addGestureRecognizer(recognizer)
         
+        let keyboardRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(keyboardRecognizer)
+        
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func nextButton(_ sender: Any) {
